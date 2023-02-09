@@ -1,0 +1,72 @@
+INNER JOIN (DEFAULT)
+  SELECT url, username
+  FROM photos
+  JOIN users ON users.id = photos.user_id;
+
+  SELECT url, username
+  FROM photos
+  INNER JOIN users ON users.id = photos.user_id;
+
+LEFT OUTER JOIN
+  SELECT url, username
+  FROM photos
+  LEFT JOIN users ON users.id = photos.user_id;
+
+RIGHT OUTER JOIN
+  SELECT url, username
+  FROM photos
+  RIGHT JOIN users ON users.id = photos.user_id;
+
+FULL JOIN
+  SELECT url, username
+  FROM photos
+  FULL JOIN users ON users.id = photos.user_id;
+
+GET name AND title FROM authors and books
+  SELECT title, name
+  FROM books
+  JOIN authors
+  ON authors.id = books.author_id;
+
+AN INNER JOIN OF username AND url WILL NOT GET user4 and photo4
+  SELECT username, url
+  FROM users
+  JOIN photos
+  ON users.id = photos.user_id;
+
+AN LEFT JOIN OF username AND url WILL GET user4 BUT NOT GET photo4
+  SELECT username, url
+  FROM users
+  LEFT JOIN photos
+  ON users.id = photos.user_id;
+
+AN RIGHT JOIN OF username AND url WILL NOT GET user4 BUT GET photo4
+  SELECT username, url
+  FROM users
+  RIGHT JOIN photos
+  ON users.id = photos.user_id;
+
+AN FULL JOIN OF username AND url WILL GET user4 and photo4
+  SELECT username, url
+  FROM users
+  FULL JOIN photos
+  ON users.id = photos.user_id;
+
+JOIN comments AND photos THEN GET A LIST WHERE THE USER OF THE PHOTO IS ALSO THE USER OF THE COMMENT
+  SELECT url, contents
+  FROM comments
+  JOIN photos
+  ON photos.id = comments.photo_id
+  WHERE comments.user_id = photos.user_id;
+
+3-WAY JOIN
+JOIN comments AND photos THEN GET A LIST WHERE THE USER OF THE PHOTO IS ALSO THE USER OF THE COMMENT
+  SELECT username, url, contents
+  FROM comments
+  JOIN photos ON photos.id = comments.photo_id
+  JOIN users ON users.id = comments.user_id AND users.id = photos.user_id;
+
+
+
+select * from users;
+select * from photos;

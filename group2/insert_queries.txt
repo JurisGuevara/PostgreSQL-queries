@@ -1,0 +1,10 @@
+INSERTING A PHOTO URL WITH A NON-EXISTENT USER ID INTO A TABLE WILL PRODUCE AN ERROR
+  INSERT INTO photos_url (url, user_id) VALUES ('http://image001.jpeg', 277);
+
+INSERTING A PHOTO URL WITH NO USER ID INTO A TABLE IS VALID
+  INSERT INTO photos_url (url, user_id) VALUES ('http://image001.jpeg', NULL);
+  INSERT INTO photos_url (url) VALUES ('http://image002.jpeg');
+
+
+
+

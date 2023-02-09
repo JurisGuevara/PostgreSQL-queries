@@ -1,0 +1,67 @@
+MATH OPERATORS
+  +   add
+  -   subtract
+  *   multiply
+  /   divide
+  ^   exponent
+  |/  square root
+  @   absolute value
+  %   remainder
+
+
+STRING OPERATORS
+  ||          join two strings
+  CONCAT()    join two strings
+  LOWER()     gives lower case string
+  UPPER()     gives an uppercase string
+  LENGTH()    gives number of characters in string
+
+
+COMPARISON MATH OPERATORS
+  =         are the values equal?
+  >         is the value on the left greater?
+  <         is the value on the left less?
+  >=        is the value on the left greater or equal to the right?
+  IN        is the value present in a list?
+  <=        is the value on the left less or equal to the right?
+  <>        are the values not equal?
+  !=        are the values not equal?
+  BETWEEN   is the value between two other values?
+  NOT IN    is the value not present in a list?
+
+
+DELETE OPTIONS CAN BE SET ON TABLE CREATION
+  ON DELETE RESTRICT      throw an error (DEFAULT)
+  ON DELETE NO ACTION     throw an error
+  ON DELETE CASCADE       also delete the photo/s
+  ON DELETE SET NULL      set the user_id of the photo to NULL
+  ON DELETE SET DEFAULT   set the user_id of the photo to a default value
+
+
+INNER JOIN (DEFAULT)
+  SELECT url, username
+  FROM photos
+  JOIN users ON users.id = photos.user_id;
+
+  SELECT url, username
+  FROM photos
+  INNER JOIN users ON users.id = photos.user_id;
+
+LEFT OUTER JOIN
+  SELECT url, username
+  FROM photos
+  LEFT JOIN users ON users.id = photos.user_id;
+
+RIGHT OUTER JOIN
+  SELECT url, username
+  FROM photos
+  RIGHT JOIN users ON users.id = photos.user_id;
+
+FULL JOIN
+  SELECT url, username
+  FROM photos
+  FULL JOIN users ON users.id = photos.user_id;
+
+
+
+

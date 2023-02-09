@@ -1,0 +1,7 @@
+JOIN 3 TABLES AND DISPLAY DETAILS IF AUTHOR REVIEWS OWN BOOK
+  SELECT authors.name, books.title, reviews.rating
+  FROM reviews
+  JOIN books ON books.id = reviews.book_id
+  JOIN authors ON reviews.reviewer_id = authors.id AND books.author_id = authors.id;
+
+

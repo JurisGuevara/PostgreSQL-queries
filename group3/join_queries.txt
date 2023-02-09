@@ -1,0 +1,20 @@
+GET ALL PHOTO URLS FROM USER ID 4
+  SELECT * FROM photos_url WHERE user_id = 4;
+
+JOIN TWO TABLES users AND photos_url
+  SELECT * FROM photos_url JOIN users ON users.id = photos_url.user_id;
+
+
+JOIN blog_users AND blog_comments AND GET ONLY CONTENTS AND USERNAME COLUMNS
+  SELECT contents, username
+  FROM blog_comments
+  JOIN blog_users
+  ON blog_users.id = blog_comments.user_id;
+
+GET contents AND photos_url
+  SELECT contents, url
+  FROM blog_comments
+  JOIN blog_photos
+  ON blog_photos.id = blog_comments.photo_id;
+
+

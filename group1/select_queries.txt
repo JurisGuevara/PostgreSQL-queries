@@ -1,0 +1,90 @@
+SELECT ALL COLUMNS
+  SELECT * FROM cities;
+
+SELECT ONE COLUMN
+  SELECT name FROM cities;
+
+SELECT TWO COLUMNS
+  SELECT name, country FROM cities;
+
+COMPUTE POPULATION DENSITY (population / area)
+  SELECT name, population / area AS population_density FROM cities;
+
+MATH OPERATORS
+  +   add
+  -   subtract
+  *   multiply
+  /   divide
+  ^   exponent
+  |/  square root
+  @   absolute value
+  %   remainder
+
+STRING OPERATORS
+  ||          join two strings
+  CONCAT()    join two strings
+  LOWER()     gives lower case string
+  UPPER()     gives an uppercase string
+  LENGTH()    gives number of characters in string
+
+CONCATONATE TWO COLUMNS
+  SELECT name || country AS location FROM cities;
+  SELECT name || ', ' || country AS location FROM cities;
+  SELECT CONCAT(name, ', ', country) AS location FROM cities;
+
+CONCATONATE WITH UPPER()
+  SELECT CONCAT(UPPER(name), ', ', UPPER(country)) AS location FROM cities;
+  SELECT UPPER(CONCAT(name, ', ', country)) AS location FROM cities;
+
+COMPARISON MATH OPERATORS
+  =         are the values equal?
+  >         is the value on the left greater?
+  <         is the value on the left less?
+  >=        is the value on the left greater or equal to the right?
+  IN        is the value present in a list?
+  <=        is the value on the left less or equal to the right?
+  <>        are the values not equal?
+  !=        are the values not equal?
+  BETWEEN   is the value between two other values?
+  NOT IN    is the value not present in a list?
+
+GET CITIES WITH AREA > 4000
+  SELECT name, area AS large_cities FROM cities WHERE area > 4000;
+
+GET CITIES WITH AREA = 8223
+  SELECT name, area AS selected_area FROM cities WHERE area = 8223;
+
+GET CITIES WITH AREA NOT = 8223
+  SELECT name, area AS selected_area FROM cities WHERE area != 8223;
+  SELECT name, area AS selected_area FROM cities WHERE area <> 8223;
+
+GET VALUE IF PRESENT IN A LIST
+  SELECT name, area AS selected_value FROM cities WHERE name IN ('Delhi');
+  SELECT name, area AS selected_value FROM cities WHERE name IN ('Delhi', 'Shanghai');
+
+GET VALUE IF NOT PRESENT IN A LIST
+  SELECT name, area AS selected_value FROM cities WHERE name NOT IN ('Delhi');
+  SELECT name, area AS selected_value FROM cities WHERE name NOT IN ('Delhi', 'Shanghai');
+
+COMBINATION, GET VALUES LISTED AND NOT LISTED
+  SELECT name, area AS selected_values FROM cities WHERE area NOT IN (3043, 8223) AND name = 'Delhi';
+  SELECT name, area AS selected_values FROM cities WHERE area NOT IN (3043, 8223) OR name = 'Delhi';
+  SELECT name, area AS selected_values FROM cities WHERE area NOT IN (3043, 8223) OR name = 'Delhi' OR name = 'Tokyo';
+
+GET ALL PHONES THAT SOLD > 5000 UNITS
+  SELECT phone_name, phone_price FROM smart_phones WHERE units_sold > 5000;
+
+GET ALL PHONES WITH MANUFACTURERE APPLE AND SAMSUNG
+  SELECT phone_name, phone_manufacturer FROM smart_phones WHERE phone_manufacturer IN ('Apple', 'Samsung');
+
+GET ALL CITIES WITH POPULATION DENSITY > 6000
+  SELECT name FROM cities WHERE population / area > 6000;
+
+GET ALL PHONES WITH TOTAL REVENUE > 1,000,000
+  SELECT phone_name, phone_price * units_sold AS total_revenue FROM smart_phones WHERE phone_price * units_sold > 1000000;
+
+
+
+
+
+

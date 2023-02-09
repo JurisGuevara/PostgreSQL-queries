@@ -1,0 +1,18 @@
+OPTIONS FOR photos_url IF A USER (PARENT DATA) IS DELETED
+CAN BE SET ON TABLE CREATION
+  ON DELETE RESTRICT      throw an error (DEFAULT)
+  ON DELETE NO ACTION     throw an error
+  ON DELETE CASCADE       also delete the photo/s
+  ON DELETE SET NULL      set the user_id of the photo to NULL
+  ON DELETE SET DEFAULT   set the user_id of the photo to a default value
+
+ON DELETE RESTRICT (ERROR)
+  DELETE FROM users WHERE id = 1;
+
+ON DELETE CASCADE (pls see photos_url)
+  DELETE FROM users WHERE id = 1;
+
+ON DELETE SET NULL (pls see photos_url)
+  DELETE FROM users WHERE id = 1;
+
+

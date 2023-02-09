@@ -1,0 +1,14 @@
+UPDATE VALUE
+  UPDATE cities SET population = 39505000 WHERE name = 'Tokyo';
+  UPDATE cities SET population = population + 1000000 WHERE name = 'Tokyo';
+
+UPDATE VALUE OF CORRECT ITEM
+  UPDATE cities SET population = 1000000 WHERE name IN ('Tokyo', 'United States');
+
+UPDATE UNITS SOLD
+  UPDATE smart_phones SET units_sold = 8543 WHERE phone_name IN ('N8');
+  UPDATE smart_phones SET units_sold = units_sold + 1000 WHERE phone_name IN ('N8');
+
+
+
+

@@ -1,0 +1,19 @@
+DELETE ENTIRE TABLE
+  DROP TABLE photos_url;
+  DROP TABLE users;
+
+DELETE AN ITEM FROM A TABLE
+  DELETE FROM cities WHERE name = 'Tokyo';
+
+DELETE ALL ITEMS NOT TOKYO
+  DELETE FROM cities WHERE name <> 'Tokyo';
+
+DELETE ITEMS THAT ARE SHANGHAI BUT IN UNITED STATES
+  DELETE FROM cities WHERE name = 'Shanghai' AND country = 'United States';
+
+DELETE ALL ITEMS MADE BY SAMSUNG
+  DELETE FROM smart_phones WHERE phone_manufacturer = 'Samsung';
+
+
+
+
